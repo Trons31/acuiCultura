@@ -1,0 +1,13 @@
+.slide-show > div {
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    
+}
+
+.btn-link-Dialog{
+    background: none;
+    color: '#1976d2';
+    font-size: '10px';
+  }
