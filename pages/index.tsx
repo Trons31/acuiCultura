@@ -82,7 +82,7 @@ const Home: NextPage = ( {  }) => {
         isBannerTextColor={true} 
         colorTextBanner="rgba(255, 255, 255, 0.5)" 
         isBannerTitleWithColor={false} 
-        colorTitleBanner={''} />
+       />
  
           <Main>
           <Box id="section-5">

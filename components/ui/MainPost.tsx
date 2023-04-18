@@ -6,18 +6,18 @@ import {Paper,Typography,Grid,Link,Box ,Button} from '@mui/material/';
 
 
 interface Props {
-    title: string;
-    description: string;
-    image: string;
-    imageText: string;
-    linkText: string;
-    height: number;
-    marginTop: number;
-    marginBotton: number;
-    isBannerTextColor: boolean;
-    colorTextBanner: string;
-    isBannerTitleWithColor: boolean;
-    colorTitleBanner: string
+    title?: string;
+    description?: string;
+    image?: string;
+    imageText?: string;
+    linkText?: string;
+    height?: number;
+    marginTop?: number;
+    marginBotton?: number;
+    isBannerTextColor?: boolean;
+    colorTextBanner?: string;
+    isBannerTitleWithColor?: boolean;
+    colorTitleBanner?: string
 }
 
 export const MainPost:FC<Props> = ({description, image,imageText,linkText,marginTop,marginBotton, height, title,isBannerTextColor,colorTextBanner,isBannerTitleWithColor,colorTitleBanner}) => {
@@ -78,7 +78,7 @@ export const MainPost:FC<Props> = ({description, image,imageText,linkText,margin
                 <>
                 <Box sx={{ backgroundColor: colorTextBanner , padding:{ xs: "0px 0px", sm:"20px 30px" } }} >
                   <Typography  sx={{ fontSize: { xs: 25, sm:45 } }} fontWeight={300} color="black" variant="h5" paragraph >
-                    {description.toUpperCase() }
+                    {description!.toUpperCase() }
                   </Typography>
                 </Box>
                 </>
