@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Head from "next/head"
-import { Navbar, Sidebar } from "../ui";
+import { Footer, Navbar, Sidebar, } from "../ui";
+import { Divider } from "@mui/material";
 
 
 type Section = {
@@ -15,11 +16,12 @@ interface Props {
     imageFullUrl?: string;
     sections: Section[];
     isMainPage: boolean;
+    isMainPageFooter: boolean;
     children: JSX.Element | JSX.Element[];
    
 }
 
-export const Layout:FC<Props> = ({ title ,children,pageDescription,sections, isMainPage , imageFullUrl }: Props) => {
+export const Layout:FC<Props> = ({ title ,children,pageDescription,sections, isMainPage,isMainPageFooter  , imageFullUrl }: Props) => {
   return (
     <>
     <Head>
@@ -60,6 +62,18 @@ export const Layout:FC<Props> = ({ title ,children,pageDescription,sections, isM
     >
     { children }
     </main>
+
+
+    { 
+    
+      isMainPageFooter &&
+      (
+        <footer >
+          <Footer />
+       </footer>
+      )
+    
+    }
 
     </>
   )

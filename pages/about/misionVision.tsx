@@ -18,17 +18,22 @@ const sections = [
 
 const MisionAndVisionPage:NextPage = () => {
   return (
-        <Layout sections={sections} isMainPage={false} title='¿Quienes somos?' pageDescription='Conoce todo acerca de avicultivos la fe, quienes somos, nuestras instalaciones y procesos en la piscicultura'  >
+        <Layout 
+        sections={sections} 
+        isMainPage={false} 
+        isMainPageFooter={false} 
+        title='¿Quienes somos?' 
+        pageDescription='Conoce todo acerca de avicultivos la fe, quienes somos, nuestras instalaciones y procesos en la piscicultura'  >
         
         <MainPost 
-        description='lo que sea'
+        description='NUESTRO PRODUCTO ES PREFERIDO EN LAS FAMILIAS POR SUS PROPIEDADES NUTRICIONALES Y VAIREDAD EN LA PREPARACION'
         image='slide.jpg'
         imageText='venta de pescado'
         linkText='ver mas'
         marginTop={0}
         marginBotton={1}
         height={300}
-        title={'ACUICULTIVOS LA FE'} 
+        title={'PRODUCCION DE CALIDAD'} 
         isBannerTextColor={false} 
         colorTextBanner={''} 
         isBannerTitleWithColor={false} 
@@ -75,7 +80,7 @@ const MisionAndVisionPage:NextPage = () => {
 
        <Banner
         titleBanner='Productos y servicios' 
-        description='Conoce cada uno de nuestros productos y servicios '
+        description='Garantizamos un pescado que contiene proteinas de buena calidad, concentrado que contiene  minerales como el hierro, el zinc, fosforo, selenio, y potasio, acidos grasos como el omega 3 entre otros nutrientes; esto es posible proporcionar debido a la exelente alimentacion y crianza que contiene nuestro producto'
         linkPage='/'
         textButton='Visitar ahora' 
         />
@@ -102,7 +107,7 @@ const MisionAndVisionPage:NextPage = () => {
             </Box>
         </Grid>    
 
-        <Grid item xs={12} sm={6} >
+        <Grid item xs={12} sm={6} mb={5} >
             <Card sx={{ borderRadius: 4, border: '7px solid #e0e0e0' }}>
                 <CardMedia
                 component="img"

@@ -98,10 +98,10 @@ export const Section3 = () => {
             />
             <CardContent>
               
-              <Box display="flex" alignItems='center' >
+              <Box sx={{ display:{ xs: 'block', sm: 'flex' } }} alignItems='center' >
                 <Typography gutterBottom variant="h5" fontWeight={600} color="#424242" component="div"> ARREGLADO</Typography>
                 <Box flex={1} />
-                <Typography color='#757575'  >Listo para la prepraracion</Typography>
+                <Typography color='#757575' sx={{ textAlign: { xs: 'end' } }} >Listo para la prepraracion</Typography>
               </Box>
                
               <Box  display="flex" sx={{mt:2 }}>
@@ -126,70 +126,87 @@ export const Section3 = () => {
 
    </Grid>
 
-   <Box sx={{ display:{ xs: 'block', sm: 'flex' } }} alignItems="center" justifyContent="space-between" >
 
+   <Box textAlign="center" mb={3}>
+         <Typography fontSize={25}  fontWeight={600} sx={{ color: '#424242' }}  >
+             PRESTAMOS NUESTROS SERVICIOS Y OFRECEMOS NUESTROS PRODUCTOS EN LA MAS  <span style={{ color: 'red' }} >ALTA CALIDAD</span>  
+             </Typography>
+   </Box>  
+
+   {/* <Grid container spacing={2} >
+      <Grid item xs={12} sm={3} textAlign="center" >
+        <Filter1Icon />
         <Chip
-        icon={<Filter1Icon />}
-        sx={{
-          height: 'auto',
-          '& .MuiChip-label': {
-            display: 'block',
-            whiteSpace: 'normal',
-          },
-          padding: '10px 20px'
-        }}
-        label=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est assumenda quae! Soluta velit placeat aliquam quas sint numquam eveniet?"
-        
-      />
-  
+          sx={{
+            height: 'auto',
+            '& .MuiChip-label': {
+              display: 'block',
+              whiteSpace: 'normal',
+            },
+            padding: '15px 5px',
+            fontSize: 15,
+            fontWeight: 400
+          }}
+          label="Oferta de pescado tilapia roja por kilo, al por menor y al detal, fresco de alta calidad, con el mejor proceso de cultivo y con la mas avanzada tecnologia"
+          
+        />
+      </Grid>
+
+      <Grid item xs={12} sm={3} textAlign="center" >
+      <Filter2Icon />
         <Chip
-        icon={<Filter2Icon />}
-        sx={{
-          height: 'auto',
-          '& .MuiChip-label': {
-            display: 'block',
-            whiteSpace: 'normal',
-          },
-          padding: '10px 20px'
-        }}
-        label=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est assumenda quae! Soluta velit placeat aliquam quas sint numquam eveniet?"
-      />
+          sx={{
+            height: 'auto',
+            '& .MuiChip-label': {
+              display: 'block',
+              whiteSpace: 'normal',
+            },
+            padding: '15px 5px',
+            fontSize: 15,
+            fontWeight: 400
+          }}
+          label="Ofrecemos a nuestros consumidores confianza y profesionalismo, traducido en la eficiencia de entrega de nuestro producto en el tiempo determinado previamente con las condiciones especificas acordadas como: color olor, sabor y tamaño"
+          
+        />
+      </Grid>
 
-    <Chip
-    icon={<Filter3Icon />}
-        sx={{
-          height: 'auto',
-          '& .MuiChip-label': {
-            display: 'block',
-            whiteSpace: 'normal',
-          },
-          padding: '10px 20px'
-        }}
-        label=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est assumenda quae! Soluta velit placeat aliquam quas sint numquam eveniet?"
-        
-      />
+      <Grid item xs={12} sm={3} textAlign="center" >
+        <Filter3Icon />
+        <Chip
+          sx={{
+            height: 'auto',
+            '& .MuiChip-label': {
+              display: 'block',
+              whiteSpace: 'normal',
+            },
+            padding: '15px 5px',
+            fontSize: 15,
+            fontWeight: 400
+          }}
+          label="Ofrece una variedad alimenticia rica desde un punto de vista nutricional por su contenido en proteinas con alto valor biologico, similiar al contenido proteico que encontramos en el pollo. De echo 100 gramos de tilapia contienen 26 gramos de proteina y solo 128 gramos de calorias"
+          
+        />
+      </Grid>
 
-      <Chip
-      icon={<Filter4Icon />}
-        sx={{
-          height: 'auto',
-          '& .MuiChip-label': {
-            display: 'block',
-            whiteSpace: 'normal',
-          },
-          padding: '10px 20px'
-        }}
-        label=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus est assumenda quae! Soluta velit placeat aliquam quas sint numquam eveniet?"
-        
-      />
+      <Grid item xs={12} sm={3} textAlign="center" >
+      <Filter4Icon />
+        <Chip
+          sx={{
+            height: 'auto',
+            '& .MuiChip-label': {
+              display: 'block',
+              whiteSpace: 'normal',
+            },
+            padding: '15px 5px',
+            fontSize: 15,
+            fontWeight: 400
+          }}
+          label="Garantizamos un pescado que contiene proteinas de buena calidad, concentrado que contiene  minerales como el hierro, el zinc, fosforo, selenio, y potasio, acidos grasos como el omega 3 entre otros nutrientes; esto es posible proporcionar debido a la exelente alimentacion y crianza que contiene nuestro producto"
+          
+        />
+      </Grid>
+   </Grid> */}
 
-   </Box>
-
-
-
-    
-
-  
     </>
   );
 }

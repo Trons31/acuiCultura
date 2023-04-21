@@ -7,21 +7,24 @@ import { Box, Button, Grid, Link, Typography } from '@mui/material';
 
 const slideImages = [
   {
+    title: "ACUICULTIVOS LA FE",
     image: "slide1.png",
-    text: "Slide 1",
+    text: "PRODUCTORES EN ALTA CALIDAD",
     buttonLink: "/slide1",
-    buttonText: "Ver más",
+    buttonText: "/about",
   },
   {
+    title: "TECNOLOGIA DE VANGUARDIA",
     image: "slide2.png",
-    text: "Slide 2",
-    buttonLink: "/slide2",
+    text: "MEJORA LA CALIDAD EN LA PRODUCCION",
+    buttonLink: "/about/processInstallations",
     buttonText: "Ver más",
   },
   {
+    title: 'ACCEDA A NUESTRAS ASESORIAS',
     image: "slide3.png",
-    text: "Slide 3",
-    buttonLink: "/slide3",
+    text: "TE AYUDAMOS A CRECER COMO PRODUCTOR",
+    buttonLink: "/consultancies",
     buttonText: "Ver más",
   },
 ];
@@ -49,27 +52,33 @@ export const Slideshow:FC = () => {
                     width="100%" 
                     display='flex'
                     justifyContent="center"
-                    alignItems="center">
-                      <Box>
-                        <Box sx={{ display:{ sx: 'block', sm: 'flex' } }} textAlign="center" alignItems="center" >
-                                <Typography sx={{ fontSize:{ xs: 25, sm: 60 } }} variant='h6' component='h6' color='white' > ALTA CALIDA</Typography>
-                                <Typography sx={{ fontSize:{ xs: 35, sm: 60 },ml:2 }} color='yellow' > ACUICULTIVOS LA FE </Typography>
+                    alignItems="center"
+                    mt={9}
+                    >
+                      <Box  >
+                          <Box textAlign="center" sx={{ background: '#f57c00', padding: '15px 20px',width: "100%"   }}>
+                                <Typography sx={{ fontSize:{ xs: 25, sm: 75 } }} variant='h6' component='h6' color='white' > {slideImage.title} </Typography>
                           </Box>
+
                             <Grid container  >
                                 <Grid item xs={12} sm={12} md={12} >
-                                      <Box sx={{ ml:5, mr:3 }} >
-                                    
-                                      <Typography color='white' sx={{ my: 1}} >                       
-                                        { slideImage.text  }
-                                      </Typography>
+                                      <Box sx={{ ml:5, mr:3 }} textAlign="center" >
+                                      
+                                      <Box sx={{ background: 'rgba(0, 0, 0, 0.7)', padding: '10px 20px' }} >
+                                        <Typography color='white' sx={{ mt: 2,fontSize:{ xs: 25, sm: 60 } }} >                       
+                                          { slideImage.text  }
+                                        </Typography>
+                                      </Box>
+                                      
 
                                       <NextLink href={slideImage.buttonLink} passHref>
                                         <Link>
-                                          <Button color="secondary" >
+                                          <Button sx={{ mt: 5}} color="secondary" size="large" >
                                             ver mas
                                           </Button>
                                         </Link>
                                       </NextLink>
+                                      
                                   </Box>
                                 </Grid>
                             </Grid>

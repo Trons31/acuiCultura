@@ -18,7 +18,7 @@ export const Section4 = () => {
     <Box>
       <Typography variant='h1' color='#333333' fontSize='35px' >ASESORIAS</Typography>
       <Box display='flex' justifyContent='center' >
-        <Divider  sx={{ width: '25%', background: '#ef6c00' }} />
+        <Divider  sx={{ width: '25%', background: 'red' }} />
       </Box>
     </Box>
 
@@ -46,11 +46,6 @@ export const Section4 = () => {
 
                    <p> Se realiza un estudio de las fortalezas y necesidades con las que cuenta el productor o inversionista con la intención de detallar de la mejor manera la inversión del proyecto y el costo del mismo.  </p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 
@@ -73,11 +68,6 @@ export const Section4 = () => {
 
                    <p> Según la necesidad del productor se realiza un análisis de las necesidades en las que requiera asesoría con la intención de mejorar la problemática presente en su empresa. </p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 
@@ -100,11 +90,6 @@ export const Section4 = () => {
 
                    <p> Según la intención del inversionista se plantea un proyecto ajustado a      los recursos naturales, físicos y económicos con los que se cuente en   el momento con la posibilidad de mejoras futuras. </p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 
@@ -132,11 +117,6 @@ export const Section4 = () => {
                     La estructura metálica donde se monta las piscinas puede ser fabricada en malla electro soldada o en platina.
                     </p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 
@@ -160,11 +140,6 @@ export const Section4 = () => {
 
                    <p> Se realiza una inspección en el lugar a trabajar y se realiza un diagnóstico, luego se calcula la cantidad de material y el costo para la instalación.   </p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 
@@ -187,11 +162,6 @@ export const Section4 = () => {
 
                    <p> Se realiza una visita de inspección al lugar donde el inversionista o      productor tiene la intención de construir los estanques y se plantea la forma que mejor se ajuste al terreno.</p>
 
-                  <Box display='flex' justifyContent='end' >
-                    <Button variant='contained'  size='large' > 
-                        ver mas
-                    </Button>
-                  </Box>
                  </Box>
             </Box>
 

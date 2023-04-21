@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { Box,  Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material"
+import { Box,  Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material"
 import { useContext} from "react";
 import { UiContext } from "../../contexts/ui";
 import StoreMallDirectoryOutlinedIcon from '@mui/icons-material/StoreMallDirectoryOutlined';
@@ -8,6 +8,9 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+
+import { FacebookOutlined } from '@mui/icons-material';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import {  Link } from "react-scroll";
 
@@ -22,15 +25,15 @@ export const Sidebar = ({ isMainPage }: AnchorMenuProps) => {
 
   const handleItemClick = (id: string) => {
     if (isMainPage) {
-      closeMenu()
+      closeMenu();
       window.scrollTo({ top: document.getElementById(id)?.offsetTop ?? 0, behavior: 'smooth' });
     } else {
-      closeMenu()
+      closeMenu();
       window.location.href = `/#${id}`;
     }
   };
 
-
+  
 
 
   return (
@@ -162,7 +165,7 @@ export const Sidebar = ({ isMainPage }: AnchorMenuProps) => {
            
          <Box>
           <NextLink  href="/about" >
-            <ListItemButton >
+            <ListItemButton onClick={closeMenu} >
                     <ListItemIcon>
                         <LanguageOutlinedIcon />
                     </ListItemIcon>
@@ -172,6 +175,24 @@ export const Sidebar = ({ isMainPage }: AnchorMenuProps) => {
            </Box>
 
          </List>
+        </Box>
+
+      
+        
+        <Box display="flex" padding="10px 20px" justifyContent="center"  >
+           
+              <NextLink href="/cart" passHref >
+                <IconButton className="facebook" >
+                  <FacebookOutlined sx={{ fontSize: '30px' }} />
+                </IconButton>
+              </NextLink>
+
+              <NextLink href="/cart" passHref >
+                <IconButton className="whatsapp" >
+                  <WhatsAppIcon sx={{ fontSize: '30px' }} />
+                </IconButton>
+              </NextLink>
+
         </Box>
 
     </Drawer>

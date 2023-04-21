@@ -15,7 +15,7 @@ const sections = [
 const Custom404 : NextPage = () => {
 
   return (
-    <Layout sections={sections} isMainPage={false} title='Pagina no encontrada' pageDescription='Error pagina no encontrada'  >
+    <Layout sections={sections} isMainPage={false} isMainPageFooter={false} title='Pagina no encontrada' pageDescription='Error pagina no encontrada'  >
       
       <Box
       display='flex'

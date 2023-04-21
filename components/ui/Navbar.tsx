@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 import { AppBar, Button, IconButton, Toolbar, Typography,Box, List, ListItem, ListItemText, Popover, ButtonGroup, ListItemButton,} from "@mui/material"
 
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import {  useContext, useState } from 'react';
+import {  useContext, useRef, useState } from 'react';
 import { UiContext } from "../../contexts/ui";
 import { Router, useRouter } from 'next/router';
 import { FacebookOutlined } from '@mui/icons-material';
@@ -38,6 +38,23 @@ export const Navbar = ({ sections, isMainPage }: AnchorMenuProps) => {
     }
   };
 
+  
+  const anchorRef = useRef<HTMLDivElement>(null);
+
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
   return (
     <AppBar sx={{ height:{xs: "auto", sm : 75}}} >
     <Toolbar>
@@ -52,12 +69,12 @@ export const Navbar = ({ sections, isMainPage }: AnchorMenuProps) => {
             </Box>
           <Box sx={{ display:{ xs: "none", sm: "block"} }} >
           <Typography color='black' fontWeight={700} sx={{ fontSize: 20 }} >ACUICULTIVOS </Typography>
-          <Typography textAlign="center" color='#F89908' sx={{ fontSize: 14 }} fontWeight={700} >Acuicultura.co</Typography>
+          <Typography textAlign="center" color='#F89908' sx={{ fontSize: 14 }} fontWeight={700} >LA FE</Typography>
           </Box>
 
           <Box sx={{ display:{ xs: "block", sm: "none"} }} >
           <Typography color='black' fontWeight={700} sx={{ fontSize: 15 }} >ACUICULTIVOS </Typography>
-          <Typography textAlign="center" color='#F89908' sx={{ fontSize: 10, mt: -1 }} fontWeight={700} >Acuicultura.co</Typography>
+          <Typography textAlign="center" color='#F89908' sx={{ fontSize: 10, mt: -1 }} fontWeight={700} >LA FE </Typography>
           </Box>
           </Box>
       </NextLink> 
@@ -68,37 +85,144 @@ export const Navbar = ({ sections, isMainPage }: AnchorMenuProps) => {
                 className='fadeIn'
                 sx={{ display: { xs: 'none', sm: 'flex' }, alignItems:'center' }} 
                 >
-              {sections.map((section) => (
-                <>
+              
                 {isMainPage ? (
-                  <Link to={section.id} key={ section.id + section.label } spy={true} smooth={true} duration={500}>
+                  <Link to={"section-1"}  spy={true} smooth={true} duration={500}>
                     <Button 
-                    className={isSection === section.id ? "active" : ""} 
+                    className={isSection === "section-1" ? "active" : ""} 
                     sx={{ fontSize: 15, ml:1, mr:1 }}  
-                    onClick={() => handleItemClick(section.id)}
+                    onClick={() => handleItemClick("section-1")}
                     >
-                      {section.label}
+                      INICIO
                     </Button>
                   </Link>
-                ) : (
-                  <Button key={ section.id + section.label } 
+                  
+                  ) : (
+                  <Button  
                    sx={{ fontSize: 15, ml:1, mr:1 }} 
-                   onClick={() => handleItemClick(section.id)}>
-                    {section.label}
+                   onClick={() => handleItemClick("section-1")}>
+                     INICIO
                   </Button>
                 )}
-            </>
-            ))}
-            
-            <NextLink href="/about" >
-                     <Button  
-                      className={router.asPath === "/about" ? "active" : ""}  
-                      sx={{ fontSize: 15, ml:1, }}
-                      >
-                        NOSOTROS
-                      </Button>
-             </NextLink>
 
+
+                  <Box display="flex" alignItems="center" >
+                  {isMainPage ? (
+                    
+                  <Link to={"section-2"}  spy={true} smooth={true} duration={500}>
+                    <Button 
+                    className={isSection === "section-2" ? "active" : ""} 
+                    sx={{ fontSize: 15, ml:1, mr:1 }}  
+                    onClick={() => handleItemClick("section-2")}
+                    >
+                     NOSOTROS
+                    </Button>
+                  </Link>
+                  
+                    ) : (
+                  <Button  
+                   sx={{ fontSize: 15, ml:1, mr:1 }} 
+                   onClick={() => handleItemClick("section-2")}>
+                     NOSOTROS
+                  </Button>
+                   )}
+
+                <IconButton sx={{ ml:-1 }}  aria-describedby={id} onMouseOver={handleClick}
+                >
+                      <ArrowDropDownOutlinedIcon />
+                    </IconButton>
+                    </Box>
+
+                    <Popover
+                      id={id}
+                      open={open}
+                      anchorEl={anchorEl}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                      }}
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "center",
+                      }}
+                    >
+                      <List>
+                        <NextLink href="/about" >
+                          <ListItemButton onClick={handleClose}>
+                            <ListItemText primary="¿Quienes somos?" />
+                          </ListItemButton>
+                        </NextLink>
+                        
+                        <ListItemButton  onClick={handleClose}>
+                          <ListItemText primary="Mision y vision" />
+                        </ListItemButton>
+                        <ListItemButton onClick={handleClose}>
+                          <ListItemText primary="Procesos e instalaciones" />
+                        </ListItemButton>
+                      </List>
+                    </Popover>       
+
+                  {isMainPage ? (
+
+                  <Link to={"section-3"}  spy={true} smooth={true} duration={500}>
+                    <Button 
+                    className={isSection === "section-3" ? "active" : ""} 
+                    sx={{ fontSize: 15, ml:1, mr:1 }}  
+                    onClick={() => handleItemClick("section-3")}
+                    >
+                     PRODUCTOS
+                    </Button>
+                  </Link>
+                 
+                    ) : (
+                  <Button  
+                   sx={{ fontSize: 15, ml:1, mr:1 }} 
+                   onClick={() => handleItemClick("section-3")}>
+                     PRODUCTOS
+                  </Button>
+                   )}
+
+
+                    {isMainPage ? (
+                  <Link to={"section-4"}  spy={true} smooth={true} duration={500}>
+                    <Button 
+                    className={isSection === "section-4" ? "active" : ""} 
+                    sx={{ fontSize: 15, ml:1, mr:1 }}  
+                    onClick={() => handleItemClick("section-4")}
+                    >
+                     ASESORIAS
+                    </Button>
+                  </Link>
+                  
+                    ) : (
+                  <Button  
+                   sx={{ fontSize: 15, ml:1, mr:1 }} 
+                   onClick={() => handleItemClick("section-4")}>
+                    ASESORIAS
+                  </Button>
+                   )}
+
+                  {isMainPage ? (
+                  <Link to={"section-5"}  spy={true} smooth={true} duration={500}>
+                    <Button 
+                    className={isSection === "section-5" ? "active" : ""} 
+                    sx={{ fontSize: 15, ml:1, mr:1 }}  
+                    onClick={() => handleItemClick("section-5")}
+                    >
+                     CONTACTO
+                    </Button>
+                  </Link>
+                  
+                    ) : (
+                  <Button  
+                   sx={{ fontSize: 15, ml:1, mr:1 }} 
+                   onClick={() => handleItemClick("section-5")}>
+                    CONTACTO
+                  </Button>
+                   )}
+           
+          
            </Box>
           <Box flex={1} />
 
